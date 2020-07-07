@@ -35,14 +35,13 @@ public abstract class BaseTest {
     private static DriverType driverType = DriverType.CHROME;
     private final static String CHROME_URL = "C:\\chromedriver.exe";
     private final static String FIREFOX_URL = "C:\\geckodriver.exe";
-    private static DesiredCapabilities capabilities = new DesiredCapabilities();
 
     @Rule
     public ScreenshotRule screenshotRule = new ScreenshotRule();
 
 
     @BeforeClass
-    public static void baseDriver() throws Exception{
+    public static void baseDriver(){
         switch (driverType){
             case CHROME:
                 System.setProperty("webdriver.chrome.driver",CHROME_URL);

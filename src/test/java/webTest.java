@@ -91,9 +91,7 @@ public class webTest extends BaseTest{
         List<String> browserTabs = new ArrayList<> (webDriver.getWindowHandles());
         for (int index = 0; index < socialMediaLogos.size() ; index ++){
             webDriver.switchTo().window(browserTabs.get(index+1));
-            if (index != 3){
-                Assert.assertEquals(socialMediaURL.get(index),webDriver.getCurrentUrl());
-            }
+            Assert.assertEquals(socialMediaURL.get(index),webDriver.getCurrentUrl());
             webDriver.close();
             webDriver.switchTo().window(browserTabs.get(0));
         }
